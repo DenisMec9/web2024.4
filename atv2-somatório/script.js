@@ -5,7 +5,7 @@ function adicionarNumero() {
     if (!isNaN(numero)){
         total += numero;
         document.getElementById('total').innerText = `somatório: ${total}`;
-        document.getElementById('numero').value) = '';
+        document.getElementById('numero').value ='';
     } else {
         alert('por favor, insira um número inteiro.');
     }
