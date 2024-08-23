@@ -1,10 +1,10 @@
-let total=0;
+let somatorio=0;
 
 function adicionarNumero() {
     const numero= parseFloat(document.getElementById('numero').value);
     if (!isNaN(numero)){
-        total += numero;
-        document.getElementById('total').innerText = `somatório: ${total}`;
+        somatorio += numero;
+        document.getElementById('total').innerText = `somatório: ${somatorio}`;
         document.getElementById('numero').value ='';
     } else {
         alert('por favor, insira um número inteiro.');
