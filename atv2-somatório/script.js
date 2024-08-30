@@ -14,7 +14,10 @@
 const btAdic = document.getElementById("btAdic");
 const inputNum = document.getElementById("inputNum");
 const inputSoma = document.getElementById("inputSoma");
+const inputMedia = document.getElementById("inputMedia");
+
 let somatorio = 0;
+let media = somatorio / Número;
 
 btAdic.onclick = () => {
   let num = parseInt(inputNum.value);
