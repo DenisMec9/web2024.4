@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <title>Somatório</title>
+    <meta charset="UTF-8">
     <script src="./script.js" defer></script>
+    <title>Formulário de Aluno</title>
 </head>
 <body>
-    <h1>Gerador de Número Aleatório</h1>
-    <p>
-        Número: <input id="inputNum" type="number" />
-        <button id="gerarNumero">Gerar Número</button>
-      </p>
-   
-    
+    <h1>Formulário de Aluno</h1>
+    <div>
+        <label for="mat">Matrícula:</label>
+        <input type="text" id="mat">
+    </div>
+    <div>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome">
+    </div>
+    <div>
+        <label for="idade">Idade:</label>
+        <input type="text" id="idade">
+    </div>
+    <div>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf">
+    </div>
+    <button onclick="transformarEmJSON()">Transformar em JSON</button>
+    <pre id="resultado"></pre>
 </body>
 </html>
