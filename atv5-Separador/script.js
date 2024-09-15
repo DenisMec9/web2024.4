@@ -1,12 +1,12 @@
-function separarLetras() {
-    const wordInput = document.getElementById('wordInput').value;
-    const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = '';
+function separarPalavra() {
+    const inputWord = document.getElementById('inputWord').value;
+    const output = document.getElementById('output');
+    output.innerHTML = ''; // Limpa o conteúdo anterior
 
-    for (const letter of wordInput) {
-        const letterDiv = document.createElement('div');
-        letterDiv.className = 'letter';
-        letterDiv.textContent = letter;
-        resultDiv.appendChild(letterDiv);
+    for (let i = 0; i < inputWord.length; i++) {
+        const letra = document.createElement('div');
+        letra.className = 'letter';
+        letra.textContent = inputWord[i];
+        output.appendChild(letra);
     }
 }
