@@ -1,4 +1,4 @@
-// Lista de palavras
+
 const palavras = [
     "abacaxi", "anel", "amigo", "ave", "abacate",
     "bola", "bala", "banho", "bau", "banco",
@@ -32,13 +32,11 @@ let palavraSelecionada = palavras[Math.floor(Math.random() * palavras.length)];
 let tentativasErradas = 0;
 let acertos = [];
 
-// Inicializa a palavra com underscores
 function initPalavra() {
     const palavraContainer = document.getElementById('palavra');
     palavraContainer.innerHTML = palavraSelecionada.split('').map(letra => acertos.includes(letra) ? letra : '_').join(' ');
 }
 
-// Cria os botões de letras
 function criarBotoesLetras() {
     const botoesContainer = document.getElementById('botoes-letras');
     botoesContainer.innerHTML = '';
@@ -51,7 +49,6 @@ function criarBotoesLetras() {
     }
 }
 
-// Lógica de tentativa de letras
 function tentarLetra(letra) {
     if (palavraSelecionada.includes(letra)) {
         acertos.push(letra);
@@ -63,7 +60,6 @@ function tentarLetra(letra) {
     verificarFimDeJogo();
 }
 
-// Desenha a forca à medida que o jogador erra
 function desenharForca(erros) {
     const canvas = document.getElementById('canvas');
     const contexto = canvas.getContext('2d');
@@ -123,7 +119,6 @@ function desenharForca(erros) {
     }
 }
 
-// Verifica se o jogo terminou
 function verificarFimDeJogo() {
     const palavraContainer = document.getElementById('palavra');
     if (!palavraContainer.textContent.includes('_')) {
@@ -135,7 +130,6 @@ function verificarFimDeJogo() {
     }
 }
 
-// Reinicia o jogo
 function reiniciarJogo() {
     palavraSelecionada = palavras[Math.floor(Math.random() * palavras.length)];
     tentativasErradas = 0;
@@ -147,6 +141,5 @@ function reiniciarJogo() {
     criarBotoesLetras();
 }
 
-// Inicializa o jogo
 initPalavra();
 criarBotoesLetras();
