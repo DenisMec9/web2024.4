@@ -13,14 +13,14 @@ body {
 }
 
 #botoes-letras button {
-    margin: 20px;
-    padding: 20px;
-    font-size: 50px;
+    margin: 50px;
+    padding: 100px;
+    font-size: 200px;
     cursor: pointer;
 }
 
 #palavra {
-    font-size: 50px;
-    letter-spacing: 30px;
-    margin-bottom: 30px;
+    font-size: 100px;
+    letter-spacing: 100px;
+    margin-bottom: 100px;
 }
