@@ -1,12 +1,17 @@
-function separarPalavra() {
-    const inputWord = document.getElementById('inputWord').value;
-    const output = document.getElementById('output');
-    output.innerHTML = ''; // Limpa o conteúdo anterior
 
-    for (let i = 0; i < inputWord.length; i++) {
-        const letra = document.createElement('div');
-        letra.className = 'letter';
-        letra.textContent = inputWord[i];
-        output.appendChild(letra);
+const inputPalavra = document.getElementById("inputPalavra");
+const btSeparar = document.getElementById("btSeparar");
+const divPrincipal = document.getElementById("divPrincipal"); 
+
+btSeparar.onclick = () => {
+    divPrincipal.innerHTML = ""; 
+    let palavra = inputPalavra.value;
+    for (let i = 0; i < palavra.length; i++) {
+        const letraDig = palavra[i];
+        let div = document.createElement("DIV");
+        div.className = "divLetra";
+        let letra = document.createTextNode(letraDig);
+        div.appendChild(letra);
+        divPrincipal.appendChild(div);
     }
-}
+};
