@@ -1,46 +1,43 @@
-/* Estilo do corpo */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Título principal */
-h1 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
-
-/* Contêiner da paleta */
-.palette-container {
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-/* Cada cor na paleta */
-.color-box {
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo do botão */
+h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
 button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
-    background-color: #2c3e50;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
 button:hover {
-    background-color: #34495e;
+    background-color: #0056b3;
+}
+
+#joke-container {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #555;
 }
