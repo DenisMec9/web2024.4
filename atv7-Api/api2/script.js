@@ -1,25 +1,32 @@
-// Seleciona o botão e o container onde a piada será exibida
-const jokeBtn = document.getElementById('joke-btn');
-const jokeContainer = document.getElementById('joke-container');
-
-// Adiciona o evento de clique no botão
-jokeBtn.addEventListener('click', generateJoke);
-
-// Função para buscar uma piada da API e exibi-la
-async function generateJoke() {
-    const apiUrl = 'https://geek-jokes.sameerkumar.website/api?format=json';
-
-    try {
-        const response = await fetch(apiUrl); // Faz a requisição à API
-        if (response.ok) {
-            const data = await response.json(); // Converte a resposta em JSON
-            jokeContainer.textContent = data.joke; // Exibe a piada na tela
-        } else {
-            jokeContainer.textContent = 'Erro ao obter a piada. Tente novamente mais tarde!'; // Em caso de erro na API
+const API_TOKEN = 'seu_token_aqui';
+ 
+        
+        async function fetchPlayerData(playerTag) {
+            const url = `https://api.clashroyale.com/v1/players/%23${playerTag}`;
+            const response = await fetch(url, {
+                headers: {
+                    'Authorization': `Bearer ${API_TOKEN}`
+                }
+            });
+ 
+            if (response.ok) {
+                const playerData = await response.json();
+                displayPlayerData(playerData);
+            } else {
+                document.getElementById('player-info').innerText = 'Erro ao buscar dados do jogador.';
+            }
         }
-    } catch (error) {
-        jokeContainer.textContent = 'Erro de conexão. Verifique sua internet.'; // Em caso de erro de rede
-        console.error('Erro:', error); // Exibe o erro no console para debug
-    }
-}
-
+ 
+       
+        function displayPlayerData(data) {
+            const playerInfoDiv = document.getElementById('player-info');
+            playerInfoDiv.innerHTML = `
+<h2>${data.name}</h2>
+<p>Tag: ${data.tag}</p>
+<p>Nível: ${data.expLevel}</p>
+<p>Troféus: ${data.trophies}</p>
+            `;
+        }
+ 
+     
+        fetchPlayerData('2PP'); 
