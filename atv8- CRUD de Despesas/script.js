@@ -20,14 +20,6 @@ const headers = {
       const li = document.createElement("li");
       li.appendChild(text);
       const cb = document.createElement("input");
-      cb.type = "checkbox";
-      cb.checked = tarefa.concluida;
-      cb.onchange = () => handleCheckboxClick(cb, Despesas);
-      li.appendChild(cb);
-      const bt = document.createElement("button");
-      bt.innerHTML = "x";
-      bt.onclick = () => handleBtRemoverClick(bt, Despesas);
-      li.appendChild(bt);
-      olTarefas.appendChild(li);
+
     });
   };
