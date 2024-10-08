@@ -13,7 +13,7 @@ const headers = {
     "Content-Type": "application/json",
   };
   const createList = (data) => {
-    Despesas.innerHTML = "";
+    olDespesas.innerHTML = "";
     const Descricao = data.results;
     Descricao.forEach((descricao) => {
       const text = document.createTextNode(`${Despesas.descricao} `);
