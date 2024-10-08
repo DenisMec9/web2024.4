@@ -5,8 +5,8 @@ const btAdicionar = document.getElementById("btAdicionar");
 
 const baseURL = "https://parseapi.back4app.com/classes/despesa";
 const headers = {
-    "X-Parse-Application-Id: WOf1KY10sPkIzZxynvsyD8xKO8VxYYpU0b0qpV7F",
-    "X-Parse-REST-API-Key: eppqhzHQDef4zXFtqlgZV5okC3JQuDeP7fCPTiPB"
+    "X-Parse-Application-Id": "WOf1KY10sPkIzZxynvsyD8xKO8VxYYpU0b0qpV7F",
+    "X-Parse-REST-API-Key": "eppqhzHQDef4zXFtqlgZV5okC3JQuDeP7fCPTiPB",
   };
   const headersJson = {
     ...headers,
