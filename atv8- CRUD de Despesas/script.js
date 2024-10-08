@@ -116,5 +116,5 @@ const handleBtAdicionarClick = async () => {
   }
 };
 
-window.onload = getTarefas;
+window.onload = getDespesas;
 btAdicionar.onclick = handleBtAdicionarClick;
