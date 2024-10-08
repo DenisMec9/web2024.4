@@ -93,7 +93,7 @@ const getDespesas = async () => {
 const handleBtAdicionarClick = async () => {
   const descricao = inputDescricao.value.trim();
   if (!descricao) {
-    alert("Necessário adicionar uma descrição para criar a tarefa!");
+    alert("Necessário adicionar uma descrição para criar a lista despesa!");
     inputDescricao.focus();
     return;
   }
