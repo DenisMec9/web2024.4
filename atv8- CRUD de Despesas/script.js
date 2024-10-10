@@ -5,7 +5,7 @@ const submit_despesa = document.getElementById('submit-despesa');
 const total_el = document.getElementById('total');
 
 // Configs
-const url = 'https://parseapi.back4app.com/classes/Despesas';
+const url = 'https://parseapi.back4app.com/classes/despesa';
 
 // Main function ==================
 async function mainFunction(){
@@ -55,8 +55,8 @@ const getRequest = async(url) => {
     const rawResponse = await fetch(url, {
         method: 'GET',
         headers: {
-            'X-Parse-Application-Id': 'GZtWVlIIfdvSS2MOlDVleERXdn96mg1An1wrgGWy',
-            'X-Parse-REST-API-Key': 'RCJqIyCphMIIEprwgPqicixMIY9zaTUIzBgbvivv'
+            'X-Parse-Application-Id':'WOf1KY10sPkIzZxynvsyD8xKO8VxYYpU0b0qpV7F'    ,
+            'X-Parse-REST-API-Key': 'eppqhzHQDef4zXFtqlgZV5okC3JQuDeP7fCPTiPB',
         }
     });
 
@@ -71,8 +71,8 @@ const putRequest = async(url, id, new_descricao, new_valor) => {
     await fetch((`${url}/${id}`), {
         method: 'PUT',
         headers: {
-            'X-Parse-Application-Id': 'GZtWVlIIfdvSS2MOlDVleERXdn96mg1An1wrgGWy',
-            'X-Parse-REST-API-Key': 'RCJqIyCphMIIEprwgPqicixMIY9zaTUIzBgbvivv',
+            'X-Parse-Application-Id':'WOf1KY10sPkIzZxynvsyD8xKO8VxYYpU0b0qpV7F'    ,
+            'X-Parse-REST-API-Key': 'eppqhzHQDef4zXFtqlgZV5okC3JQuDeP7fCPTiPB',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -87,8 +87,8 @@ const deleteRequest = async(url, id) => {
     await fetch((`${url}/${id}`), {
         method: 'DELETE',
         headers: {
-            'X-Parse-Application-Id': 'GZtWVlIIfdvSS2MOlDVleERXdn96mg1An1wrgGWy',
-            'X-Parse-REST-API-Key': 'RCJqIyCphMIIEprwgPqicixMIY9zaTUIzBgbvivv'
+        'X-Parse-Application-Id':'WOf1KY10sPkIzZxynvsyD8xKO8VxYYpU0b0qpV7F'    ,
+        'X-Parse-REST-API-Key': 'eppqhzHQDef4zXFtqlgZV5okC3JQuDeP7fCPTiPB',
         },
         body: JSON.stringify({})
     });
@@ -99,8 +99,8 @@ const postDespesa = async(url, input_descricao, input_valor) => {
     const rawResponse = await fetch(url, {
         method: 'POST',
         headers: {
-            'X-Parse-Application-Id': 'GZtWVlIIfdvSS2MOlDVleERXdn96mg1An1wrgGWy',
-            'X-Parse-REST-API-Key': 'RCJqIyCphMIIEprwgPqicixMIY9zaTUIzBgbvivv',
+            'X-Parse-Application-Id':'WOf1KY10sPkIzZxynvsyD8xKO8VxYYpU0b0qpV7F'    ,
+            'X-Parse-REST-API-Key': 'eppqhzHQDef4zXFtqlgZV5okC3JQuDeP7fCPTiPB',
             'Content-Type': 'application/json'
         },
         // Just allows in string data type
