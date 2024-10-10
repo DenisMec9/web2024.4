@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>CRUD de Despesas (back4app)</title>
-    <script src="./script.js" defer></script>
-  </head>
-  <body>
-    <h1>Lista Despesas</h1>
-    <hr />
-    <p>
-    <input id="inputDescricao" /><input id="inputValor" type="number" /> <button id="btAdicionar">Adicionar</button>
-    </p>
-    <hr />
-    <ol id="olDespesas"></ol>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <script src="./src/script.js" defer></script>
+    <script src="./src/criacao.js" defer></script>
+
+    <title>Despesas-API</title>
+</head>
+<body>
+    <header class="head">
+        <h1>Despesas API</h1>
+        <div class="container-content">
+            <p>Gerencia suas despesas com a API de despesas. Visualize, crie, atualize e exclua suas despesas.</p>
+            <div class="add-despesa">
+                <div class="container-input">
+                    <input type="text" id="input-descricao" placeholder="ex. Brinquedos legais">
+                    <input type="number" id="input-valor" placeholder="00.00">
+                    <input type="submit" value="Adicionar" id="submit-despesa">
+                </div>
+            </div>
+            <p id="total"></p>
+        </div>
+    </header>
+    <div class="despesas">
+    </div>
+</body>
 </html>
