@@ -1,4 +1,4 @@
-// Function to create 'despesas' element
+
 const div_despesas = document.querySelector('.despesas');
 
 const createElements = (descricao, valor, id) => {
@@ -33,15 +33,13 @@ const createElements = (descricao, valor, id) => {
     button_delete.textContent = 'Delete';
     div_buttons.appendChild(button_delete);
 
-    // Button edit event listener
+
     button_edit.addEventListener('click', (event) => {
-        // Getting resources for PUT request
         const objectId = event.target.id.split(' ')[1];
         const new_descricao = window.prompt('Digite uma nova descrição:');
         const new_valor = Number(window.prompt('Digite um novo valor:'));
-        // Try-catch block to validate PUT request
         try{
-            // Anonimous function reload
+            
             (async function(){
                 await putRequest(url, objectId, new_descricao, new_valor);
                 location.reload();
@@ -50,12 +48,12 @@ const createElements = (descricao, valor, id) => {
             throw new Error(err);
         }
     });
-    // Button delete event listener
+    
     button_delete.addEventListener('click', (event) => {
         const objectId = event.target.id.split(' ')[1];
-        // Try catch-block to validate DELETE request
+       
         try{
-            // Anonimous function reload
+        
             (async function(){
                 await deleteRequest(url, objectId);
                 location.reload();
