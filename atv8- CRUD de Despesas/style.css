@@ -1,0 +1,147 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.head {
+    background-color: #4CAF50;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.head h1 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.head p {
+    color: #fff;
+    font-size: 16px;
+}
+
+.container-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.container-input input[type="text"],
+.container-input input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 150px;
+}
+
+.container-input input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.container-input input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#total {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Estilo das despesas */
+.despesas {
+    width: 80%;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.despesa {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.despesa h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.despesa p {
+    font-size: 16px;
+    color: #666;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button#edit {
+    background-color: #ff9800;
+    color: white;
+}
+
+button#delete {
+    background-color: #f44336;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .container-input input[type="text"],
+    .container-input input[type="number"] {
+        width: 100px;
+    }
+
+    .despesas {
+        width: 100%;
+    }
+
+    .despesa {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .buttons {
+        margin-top: 10px;
+    }
+}
