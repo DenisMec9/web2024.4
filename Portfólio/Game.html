@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Jogo Senha</title>
+</head>
+<body>
+    <header>
+        <h1>Jogo Senha</h1>
+        <nav>
+            <a href="index.html">Voltar ao Portfólio</a>
+        </nav>
+    </header>
+
+    <section id="game">
+        <h2>Tente adivinhar a combinação!</h2>
+        <input type="text" id="guess" maxlength="4" placeholder="Digite sua tentativa">
+        <button onclick="checkGuess()">Tentar</button>
+        <button onclick="showCombination()">Mostrar combinação</button>
+        <div id="result"></div>
+        <div id="attempts"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Meu Nome</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
