@@ -23,24 +23,48 @@ function checkGuess() {
     attempts.unshift(`Tentativa: ${guess} - Resultado: ${result}`);
     document.getElementById('guess').value = '';
     updateAttempts();
+    
+    if (result === "BBBB") {
+        alert("Parabéns! Você acertou a combinação!");
+        showRestartButton();
+    }
 }
 
 function compareGuesses(guess, combination) {
-    let bulls = 0;
-    let cows = 0;
+    let result = '';
     for (let i = 0; i < 4; i++) {
         if (guess[i] === combination[i]) {
-            bulls++;
+            result += 'B';
         } else if (combination.includes(guess[i])) {
-            cows++;
+            result += 'C';
+        } else {
+            result += ' ';
         }
     }
-    return `${bulls} Bulls, ${cows} Cows`;
+    return result;
 }
 
 function updateAttempts() {
     const attemptsDiv = document.getElementById('attempts');
     attemptsDiv.innerHTML = attempts.map(attempt => `<p>${attempt}</p>`).join('');
+}
+
+function showRestartButton() {
+    const restartButton = document.createElement('button');
+    restartButton.innerText = 'Reiniciar Jogo';
+    restartButton.onclick = restartGame;
+    document.body.appendChild(restartButton);
+}
+
+function restartGame() {
+    combination = generateCombination();
+    attempts = [];
+    updateAttempts();
+    const restartButton = document.querySelector('button');
+    if (restartButton) {
+        restartButton.remove();
+    }
+    alert('Novo jogo iniciado! Tente adivinhar a nova combinação.');
 }
 
 function showCombination() {
