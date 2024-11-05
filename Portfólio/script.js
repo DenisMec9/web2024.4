@@ -31,17 +31,22 @@ function checkGuess() {
 }
 
 function compareGuesses(guess, combination) {
-    let result = '';
+    let bulls = '';
+    let cows = '';
+    
     for (let i = 0; i < 4; i++) {
         if (guess[i] === combination[i]) {
-            result += 'B';
-        } else if (combination.includes(guess[i])) {
-            result += 'C';
-        } else {
-            result += ' ';
+            bulls += 'B';
         }
     }
-    return result;
+    
+    for (let i = 0; i < 4; i++) {
+        if (guess[i] !== combination[i] && combination.includes(guess[i])) {
+            cows += 'C';
+        }
+    }
+    
+    return bulls + cows;
 }
 
 function updateAttempts() {
