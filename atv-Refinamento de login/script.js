@@ -45,7 +45,7 @@ const handleBtSignUpClick = async () => {
     return;
   }
 
-  const response = await fetch(usersURL, {
+  const response = await fetch(baseURL, {
     method: "POST",
     headers: headersJson,
     body: JSON.stringify({ username, password, email }),
