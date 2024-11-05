@@ -11,8 +11,8 @@ const usersURL = `${baseURL}/users`;
 const loginURL = `${baseURL}/login`;
 const logoutURL = `${baseURL}/logout`;
 const headers = {
-  "X-Parse-Application-Id": "IjMQNnxBbsuYKEsnvNuQhwiEw9pkLJkwWfhB9aG1",
-  "X-Parse-REST-API-Key": "ip0a7zYuKwJNXicmLC5TkLN6DGWVbLhRtIYDjU6R",
+  "X-Parse-Application-Id": "QuPI6pYEGffRfzGVauTQyRYWbKgmXSOUhUECS5yh",
+  "X-Parse-REST-API-Key":" l7Sk6o6nDmgNBCNs8ogpFuHMaGpqrqFomONSk1P2",
 };
 const headersRevSession = {
   ...headers,
@@ -20,7 +20,7 @@ const headersRevSession = {
 };
 const headersJson = {
   ...headersRevSession,
-  "Content-Type": "application/json",
+ "Content-Type":"application/json",
 };
 
 const handleBtSignUpClick = async () => {

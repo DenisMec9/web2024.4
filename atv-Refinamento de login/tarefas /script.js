@@ -4,8 +4,8 @@ const btAdicionar = document.getElementById("btAdicionar");
 
 const baseURL = "https://parseapi.back4app.com/classes/Tarefa";
 const headers = {
-  "X-Parse-Application-Id": "IjMQNnxBbsuYKEsnvNuQhwiEw9pkLJkwWfhB9aG1",
-  "X-Parse-REST-API-Key": "ip0a7zYuKwJNXicmLC5TkLN6DGWVbLhRtIYDjU6R",
+  "X-Parse-Application-Id":"QuPI6pYEGffRfzGVauTQyRYWbKgmXSOUhUECS5yh",
+  "X-Parse-REST-API-Key":"l7Sk6o6nDmgNBCNs8ogpFuHMaGpqrqFomONSk1P2",
 };
 const headersJson = {
   ...headers,
