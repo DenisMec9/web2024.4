@@ -191,77 +191,40 @@ section.topo-do-site .flex {
 }
 
 /* ESTILO DAS ESPECIALIDADES */
-section.especiliadades {
-    padding: 40px 4%;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #1A1F2E;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-section.especiliadades .flex {
-    gap: 60px;
+.skill-item {
+    text-align: center;
+    color: #EFF1F6;
+    padding: 10px;
+    background-color: #11141D;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.especiliadades .especialidades-box {
-    color: #fff;
-    padding: 40px;
-    border-radius: 20px;
-    margin-top: 45px;
-    transition: .2s;
-}
-
-.especiliadades .especialidades-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #ffffff78;
-}
-
-.especiliadades .especialidades-box i {
-    font-size: 70px;
-    color: #00FF08;
-}
-
-.especiliadades .especialidades-box h3 {
-    font-size: 28px;
-    margin: 15px 0;
-}
-
-/* ESTILO DO SOBRE */
-section.sobre {
-    padding: 80px 4%;
-}
-
-section.sobre .flex {
-    align-items: center;
-    gap: 60px;
-}
-
-.sobre .txt-sobre {
-    color: #fff;
-}
-
-.sobre .txt-sobre h2 {
-    font-size: 40px;
-    line-height: 40px;
-    margin-bottom: 30px;
-}
-
-.sobre .txt-sobre h2 span {
-    color: #00FF08;
-    display: block;
-}
-
-.sobre .txt-sobre p {
-    margin: 20px 0;
-    text-align: justify;
-}
-
-.btn-social button {
+.skill-item img {
     width: 60px;
     height: 60px;
-    border-radius: 50%;
-    border: none;
-    background-color: #00FF08;
-    font-size: 22px;
-    cursor: pointer;
-    margin: 0 5px;
-    transition: .2s;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.skill-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(61, 91, 169, 0.6);
 }
 
 /* ESTILO DO PORTFÓLIO */
