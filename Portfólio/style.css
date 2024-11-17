@@ -226,6 +226,67 @@ section.topo-do-site .flex {
     transform: scale(1.1);
     box-shadow: 0 8px 15px 
 }
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5em;
+    background: #000; /* Fundo preto para todo o layout */
+    padding: 2em; /* Adiciona espaço ao redor */
+}
+
+.project {
+    background: #1A1A1A; /* Tons mais escuros para contraste no fundo preto */
+    padding: 1em;
+    border: 1px solid #444; /* Cor do contorno ajustada para suavidade */
+    border-radius: 8px;
+    text-align: center;
+    color: #FFF; /* Cor branca para textos */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project img {
+    width: 100%;
+    max-width: 150px;
+    margin: 0.5em auto;
+    display: block;
+    border-radius: 4px;
+    border: 2px solid #333; /* Adiciona um leve contorno à imagem */
+}
+
+.project h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    color: #FFF; /* Cor branca para os títulos */
+}
+
+.project p {
+    font-size: 0.9em;
+    margin-bottom: 1em;
+    color: #CCC; /* Texto com tom mais claro */
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    color: #FFF; /* Texto do botão branco */
+    background: #333; /* Botão escuro */
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background 0.3s, color 0.3s;
+}
+
+.project a:hover {
+    background: #555; /* Altere para um cinza mais claro ao passar o mouse */
+    color: #FFF; /* Mantém o texto branco */
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Elevação ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Sombra suave para destaque */
+}
+
 /* ESTILO DO FORMULÁRIO DE CONTATO */
 section.formulario {
     padding: 80px 4%;
