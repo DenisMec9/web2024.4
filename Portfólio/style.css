@@ -394,25 +394,6 @@ footer .line-footer p a {
         padding: 40px 8%;
     }
 
-    /* SOBRE */
-    section.sobre {
-        padding: 80px 8%;
-    }
-
-    .sobre .txt-sobre h2 {
-        font-size: 34px;
-        line-height: 35px;
-        text-align: center;
-    }
-    
-    .btn-social{
-        text-align: center;
-    }
-
-    .img-sobre img{
-        width: 100%;
-    }
-
     /* PORTFÓLIO */
     section.portfolio {
         padding: 80px 8%;
