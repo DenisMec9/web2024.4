@@ -35,7 +35,7 @@ function enviar(){
     let telefone = localStorage.getItem("telefone");
 
     let data = "Nome: " + nome +"\n" + "Endereço:" + "\n" + "Email: " + "\n" + "Telefone" + telefone + "\n";
-    const url = "https://api.whatsapp.com/send?phone=" + telefone + "&text" + encodeURIComponent(data);
+    const url = "https://api.whatsapp.com/send?phone=5581988954430" + telefone + "&text" + encodeURIComponent(data);
 
     window .open(url, "_blank");    
 }
