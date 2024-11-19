@@ -32,10 +32,9 @@ function enviar(){
     let nome = localStorage.getItem("nome");
     let endereco = localStorage.getItem("endereco");
     let email = localStorage.getItem("email");
-    let telefone = localStorage.getItem("telefone");
 
     let data = "Nome: " + nome +"\n" + "Endereço:" + "\n" + "Email: " + "\n" + "Telefone" + telefone + "\n";
-    const url = "https://api.whatsapp.com/send?phone=5581988954430" + telefone + "&text" + encodeURIComponent(data);
-
+    const url = "https://api.whatsapp.com/send?phone=5581988954430" + "&text" + encodeURIComponent(data);
+//https://api.whatsapp.com/send?phone=5581988954430
     window .open(url, "_blank");    
 }
