@@ -1,109 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- FIM GOOGLE FONTES -->
-    <!-- BOOTSTRAP ICONS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <!-- FIM BOOTSTRAP ICONS -->
+    <title>Denis Barbosa - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
-    <title>Denis Barbosa</title>
 </head>
 <body>
-    
-    <header>
-        <div class="interface">
-            <div class="logo">
-                <a href="#">
-                    <img src="img/Logo D.avif" widght="100" height="100" alt="Logo D">
-                </a>
-            </div><!--logo-->
-
-            <nav class="menu-desktop">
-                <ul>
-                    <li><a href="#about">Sobre mim</a></li>
-                    <li><a href="#skills">Especialidades</a></li>
-                    <li><a href="#pj">Projetos</a></li>
-                    <li><a href="Game.html"> Jogo da senha</a></li>
-                </ul>
-            </nav>
-
-            <div class="btn-contato">
-                <a href="contato.html">
-                    <button>Contato </button>
-                </a>
-            </div><!---contato-->
+    <header class="header">
+        <h1>Denis Barbosa</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre mim</a></li>
+                <li><a href="#skills">Competências</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section id="about" class="topo-do-site">
-            <div class="interface">
-                <div class="flex">
-                    <div class="txt-topo-site">
-                        <h1>Denis Barbosa<span>.</span></h1>
-                        <p>Olá! Sou Denis, estudante de Sistemas para Internet e apaixonado por tecnologia e inovação. Tenho 20 anos e estou sempre em busca de aprimorar meus conhecimentos, explorando soluções criativas para o desenvolvimento e novas tendências.
-
-                            Meu objetivo é transformar ideias em experiências digitais funcionais e atraentes, aliando design e tecnologia para criar soluções modernas e eficazes.
-                            
-                            Vamos construir algo incrível juntos? 🚀</p>
-
-                        <div class="btn-contato">
-                            <a href="https://api.whatsapp.com/send?phone=5581988954430">
-                                <button>Entre em contato</button>
-                            </a>
-                        </div>
-                    </div><!--txt-topo-site-->
-
-                    <div class="img-topo-site">
-                        <img src="img/WhatsApp Image 2024-11-16 at 19.08.51.jpeg" widght="250" height="250" alt="">
-                    </div><!--img-topo-site-->
-                </div><!--flex-->
-            </div><!--interface-->
-        </section><!--topo-do-site-->
-
-        <section id="skills" class="section">
-            <h2 class="titulo"><span>ESPECIALIDADES</span></h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <img src="img/symbolhtml.png"widght="150" height="150" alt="HTML">
-                    <h4>HTML</h4>
-                </div>
-                <div class="skill-item">
-                    <img src="img/symbolcss.png"widght="150" height="150" alt="CSS">
-                    <h4>CSS</h4>
-                </div>
-                <div class="skill-item">
-                    <img src="img/symboljs.png" widght="150" height="150" alt="JavaScript">
-                    <h4>JavaScript</h4>
-                </div>
-                <div class="skill-item">
-                    <img src="img/symbolpython.png" widght="150" height="150"alt="Python">
-                    <h4>Python</h4>
-                </div>
-                <div class="skill-item">
-                    <img src="img/symbolgit.png"widght="150" height="150" alt="GitHub">
-                    <h4>GitHub</h4>
-                </div>
-                <div class="skill-item">
-                    <img src="img/symbolfigma.png" widght="150" height="150"alt="Figma">
-                    <h4>Figma</h4>
-                </div>
-                <div class="skill-item">
-                    <img src="img/symbolsql.png" widght="150" height="150" alt="SQL">
-                    <h4>SQL</h4>
+        <section id="about" class="section">
+            <h2>SOBRE MIM</h2>
+            <div class="container">
+                <img src="img/WhatsApp Image 2024-11-16 at 19.08.51.jpeg" alt="Minha Foto" class="imagem-arredondada">
+                <div class="texto">
+                    <p>Sou o Denis, estudante de Sistemas para Internet</p>
+                    <p>com foco em programação, comunicação e design. Busco</p>
+                    <p>aplicar conhecimentos em desenvolvimento web e interfaces,</p>
+                    <p>alinhando habilidades técnicas com criatividade para soluções<P> inovadoras.</p>
                 </div>
             </div>
-        </section> 
-        <h2 class="titulo"><span>PROJETOS</span></h2>
-        <section id="pj" class="projects">
-            <article class="project">
-                <h3>GREEN IN NATURE</h3>
+            <div class="item">
+                <img src="logosin/" alt="logo unicap" class="imagem-lateral">
+                <div class="titulo">
+                    <h3>Tecnólogo em Sistemas para Internet</h3>
+                    <p><i>Universidade Católica de Pernambuco</i></p>
+                    <p>Trabalhando e ganhando experiências em projetos reais por meio de soluções tecnológicas.</p>
+                </div>
+            </div>
+
+        </section>
+        
+
+        <section id="skills" class="section">
+            <h2>COMPETÊNCIAS</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <img src="programasin/symbolhtml.png" alt="HTML">
+                    <p>HTML</p>
+                </div>
+                <div class="skill-item">
+                    <img src="programasin/symbolcss.png" alt="CSS">
+                    <p>CSS</p>
+                </div>
+                <div class="skill-item">
+                    <img src="programasin/symboljs.png" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <img src="programasin/symbolpython.png" alt="Python">
+                    <p>Python</p>
+                </div>
+                <div class="skill-item">
+                    <img src="programasin/symbolgit.png" alt="GitHub">
+                    <p>GitHub</p>
+                </div>
+                <div class="skill-item">
+                    <img src="programasin/symbolfigma.png" alt="Figma">
+                    <p>Figma</p>
+                </div>
+                <div class="skill-item">
+                    <img src="programasin/symbolps.png" alt="Photoshop">
+                    <p>Photoshop</p>
+                </div>
+                <div class="skill-item">
+                    <img src="programasin/symbolsql.png" alt="SQL">
+                    <p>SQL</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>PROJETOS</h2>
+            <div class="projects">
+                <article class="project">
+                    <h3>GREEN IN NATURE</h3>
                 <p>Projeto alternativa sustentável ao uso de pesticidas.</p>
                 <img id="greenomie" src="img/WhatsApp Image 2024-11-18 at 11.45.10.jpeg" widght="100" height="100" alt="GIN">
                 <a href="https://docs.google.com/document/d/1ui4GzEliP4h2nwTgjYMnheqpx0Tb9GtM3QTjs5zl69Y/edit?tab=t.0" target="_blank">Ver Projeto</a>
@@ -119,29 +101,30 @@
                 <p>Api de Despeas com aplicação web.</p>
                 <img id="portfolio" src="img/WhatsApp Image 2024-11-16 at 21.35.23.jpeg" widght="100" height="100" alt="Croud Despesas">
                 <a href="https://web2024-4.vercel.app/atv8-%20CRUD%20de%20Despesas/" target="_blank">Ver Projeto</a>
-            </article>
+                </article>
+                <article class="project">
+                    <h3>Cinemavalia</h3>
+                    <p>Projeto de website voltado para o público de cinéfilos brasileiros.</p>
+                    <img id="violao" src="img/cinemavalia.png" alt="Cinemavalia Project">
+                    <a href="https://projeto-final-gray.vercel.app/#" target="_blank">Ver Projeto</a>
+                </article>
+
+                </article>
+
+            </div>
         </section>
-    </section>
+
+        <section id="contact" class="section">
+            <h2>CONTATO</h2>
+            <div class="btn-contato">
+                <a href="contato.html">
+                    <button>Contato </button>
+                </a>
+        </section>
     </main>
+
     <footer>
-        <div class="interface">
-            <div class="line-footer">
-                <div class="flex">
-                    <div class="logo-footer">
-                        <img src="img/Logo D.avif" widght="50" height="50" alt="Logo D>
-                    </div><!--logo-footer-->
-                    <div class="btn-social">
-                        <a href="https://www.instagram.com/denis_mec9/"><button><i class="bi bi-instagram"></i></button></a>
-                        <a href="https://www.linkedin.com/in/denis-silva-7b98972bb/"><button><i class="bi bi-linkedin"></i></button></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="line-footer borda">
-                <p><i class="bi bi-envelope-fill"></i> <a>denisfilho2@gmail.com</a></p>
-            </div>
-        </div>
+        <p>© 2024 Denis Barbosa</p>
     </footer>
-
 </body>
 </html>
