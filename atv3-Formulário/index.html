@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -25,5 +26,802 @@
     </div>
     <button onclick="transformarEmJSON()">Registra</button>
     <pre id="resultado"></pre>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo Legal - Produção Profissional de Podcasts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6d28d9;
+            --secondary: #f97316;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        .neon-shadow {
+            box-shadow: 0 0 10px rgba(109, 40, 217, 0.7);
+        }
+        
+        .player-waveform {
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 500 100" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="%236d28d9" stroke-width="4" d="M0,50 C50,50 50,20 100,20 C150,20 150,80 200,80 C250,80 250,40 300,40 C350,40 350,60 400,60 C450,60 450,30 500,30"></path></svg>');
+            background-size: 200% 100%;
+            animation: wave 8s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { background-position-x: 0%; }
+            100% { background-position-x: 200%; }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .podcast-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(109, 40, 217, 0.3), 0 10px 10px -5px rgba(109, 40, 217, 0.1);
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Floating CTA -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/5581988100164" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center transition-all duration-300 transform hover:scale-105">
+            <i class="fab fa-whatsapp text-xl mr-2"></i> Fale no WhatsApp
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-900 bg-opacity-90 backdrop-blur-md fixed w-full z-40 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold gradient-text">Conteúdo Legal</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#servicos" class="text-gray-300 hover:text-white transition">Serviços</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-white transition">Portfólio</a>
+                    <a href="#diferenciais" class="text-gray-300 hover:text-white transition">Diferenciais</a>
+                    <a href="#processo" class="text-gray-300 hover:text-white transition">Processo</a>
+                    <a href="#contato" class="text-gray-300 hover:text-white transition">Contato</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-900 border-t border-gray-800">
+            <div class="px-4 py-3 space-y-3">
+                <a href="#servicos" class="block text-gray-300 hover:text-white transition">Serviços</a>
+                <a href="#portfolio" class="block text-gray-300 hover:text-white transition">Portfólio</a>
+                <a href="#diferenciais" class="block text-gray-300 hover:text-white transition">Diferenciais</a>
+                <a href="#processo" class="block text-gray-300 hover:text-white transition">Processo</a>
+                <a href="#contato" class="block text-gray-300 hover:text-white transition">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    <span class="gradient-text">Dê voz</span> à sua marca
+                </h1>
+                <p class="text-xl text-gray-300 mb-8">
+                    Produção profissional de podcasts que transformam sua mensagem em conteúdo impactante. 
+                    Da concepção à distribuição, nós cuidamos de tudo para que você possa focar no que realmente importa.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contato" class="gradient-bg text-white font-bold py-4 px-8 rounded-lg text-lg hover:opacity-90 transition duration-300 transform hover:scale-105 text-center">
+                        Solicitar Orçamento
+                    </a>
+                    <a href="#portfolio" class="border border-purple-500 text-purple-400 font-bold py-4 px-8 rounded-lg text-lg hover:bg-purple-900 hover:bg-opacity-30 transition duration-300 text-center">
+                        Conheça nossos trabalhos
+                    </a>
+                </div>
+            </div>
+            <div class="fade-in">
+                <div class="relative player-waveform bg-gray-800 rounded-2xl overflow-hidden p-8 neon-shadow">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-70"></div>
+                    <img src="https://images.unsplash.com/photo-1593697909683-bccb1b9e68a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Estúdio de podcast profissional" 
+                         class="rounded-xl w-full h-auto object-cover relative z-10">
+                    <div class="absolute bottom-6 left-6 right-6 bg-gray-900 bg-opacity-80 backdrop-blur-sm rounded-lg p-4 z-20 flex items-center">
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="flex-1">
+                            <div class="text-white font-medium">Episódio de exemplo</div>
+                            <div class="text-gray-400 text-sm">Conteúdo Legal Podcast</div>
+                        </div>
+                        <div class="w-full max-w-xs h-1 bg-gray-700 rounded-full overflow-hidden">
+                            <div class="bg-purple-500 h-full" style="width: 30%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-16 text-center fade-in">
+            <p class="text-gray-400 mb-4">Role para conhecer mais</p>
+            <div class="scroll-indicator inline-block">
+                <i class="fas fa-chevron-down text-2xl text-purple-400"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logos Section -->
+    <section class="py-12 bg-gray-800 bg-opacity-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-400 mb-8">Já produzimos conteúdo para:</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <img src="https://via.placeholder.com/160x80?text=Marca+1" alt="Logo marca 1" class="h-12 object-contain opacity-70 hover:opacity-100 transition mx-auto">
+                <img src="https://via.placeholder.com/160x80?text=Marca+2" alt="Logo marca 2" class="h-12 object-contain opacity-70 hover:opacity-100 transition mx-auto">
+                <img src="https://via.placeholder.com/160x80?text=Marca+3" alt="Logo marca 3" class="h-12 object-contain opacity-70 hover:opacity-100 transition mx-auto">
+                <img src="https://via.placeholder.com/160x80?text=Marca+4" alt="Logo marca 4" class="h-12 object-contain opacity-70 hover:opacity-100 transition mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossos <span class="gradient-text">Serviços</span></h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Oferecemos soluções completas para levar seu podcast do conceito à audiência
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-gray-800 rounded-xl p-8 hover:border-purple-500 border border-gray-700 transition-all duration-300 fade-in podcast-card">
+                <div class="gradient-bg w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-pen-fancy text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Criação de Roteiro</h3>
+                <p class="text-gray-300">
+                    Desenvolvemos roteiros cativantes que mantêm sua audiência engajada, com estrutura profissional e storytelling eficaz.
+                </p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="bg-gray-800 rounded-xl p-8 hover:border-purple-500 border border-gray-700 transition-all duration-300 fade-in podcast-card">
+                <div class="gradient-bg w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-microphone text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Gravação Profissional</h3>
+                <p class="text-gray-300">
+                    Estúdio equipado com tecnologia de ponta e engenheiros de som especializados para captação de áudio impecável.
+                </p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="bg-gray-800 rounded-xl p-8 hover:border-purple-500 border border-gray-700 transition-all duration-300 fade-in podcast-card">
+                <div class="gradient-bg w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-cut text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Edição Avançada</h3>
+                <p class="text-gray-300">
+                    Processamento de áudio profissional, remoção de ruídos, equalização e mixagem para um resultado de estúdio.
+                </p>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="bg-gray-800 rounded-xl p-8 hover:border-purple-500 border border-gray-700 transition-all duration-300 fade-in podcast-card">
+                <div class="gradient-bg w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-broadcast-tower text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Distribuição Multiplataforma</h3>
+                <p class="text-gray-300">
+                    Publicação em todas as plataformas (Spotify, Apple Podcasts, Google Podcasts, Deezer) com metadados otimizados.
+                </p>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="bg-gray-800 rounded-xl p-8 hover:border-purple-500 border border-gray-700 transition-all duration-300 fade-in podcast-card">
+                <div class="gradient-bg w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-chart-line text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Marketing de Lançamento</h3>
+                <p class="text-gray-300">
+                    Estratégias de divulgação, criação de artes, teasers e campanhas para garantir que seu podcast seja descoberto.
+                </p>
+            </div>
+            
+            <!-- Card 6 -->
+            <div class="bg-gray-800 rounded-xl p-8 hover:border-purple-500 border border-gray-700 transition-all duration-300 fade-in podcast-card">
+                <div class="gradient-bg w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-headset text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Produção Completa</h3>
+                <p class="text-gray-300">
+                    Pacote completo incluindo hospedagem, monetização, relatórios de audiência e suporte contínuo para seu podcast.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-800 bg-opacity-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Podcasts que <span class="gradient-text">Produzimos</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Alguns dos projetos que tivemos o prazer de ajudar a criar
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Podcast 1 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 transition-all duration-300 fade-in podcast-card">
+                    <img src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="Capa do podcast" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Negócios Digitais</h3>
+                        <p class="text-gray-400 text-sm mb-4">Para empreendedores</p>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-full bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-purple-500 h-1.5 rounded-full" style="width: 45%"></div>
+                            </div>
+                            <span class="text-xs text-gray-400">45:32</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <span class="text-xs text-gray-400">Ep. 12 - Crescimento Exponencial</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Podcast 2 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 transition-all duration-300 fade-in podcast-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Capa do podcast" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Marketing na Prática</h3>
+                        <p class="text-gray-400 text-sm mb-4">Dicas reais para marcas</p>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-full bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-orange-500 h-1.5 rounded-full" style="width: 28%"></div>
+                            </div>
+                            <span class="text-xs text-gray-400">28:15</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <span class="text-xs text-gray-400">Ep. 7 - Branding Autêntico</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Podcast 3 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 transition-all duration-300 fade-in podcast-card">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                         alt="Capa do podcast" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Tech Insights</h3>
+                        <p class="text-gray-400 text-sm mb-4">Tecnologia e inovação</p>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-full bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-blue-500 h-1.5 rounded-full" style="width: 62%"></div>
+                            </div>
+                            <span class="text-xs text-gray-400">62:45</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <span class="text-xs text-gray-400">Ep. 23 - IA Generativa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center fade-in">
+                <a href="#contato" class="inline-block gradient-bg text-white font-bold py-3 px-8 rounded-lg hover:opacity-90 transition duration-300">
+                    Quero meu podcast assim
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais Section -->
+    <section id="diferenciais" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Por que escolher a <span class="gradient-text">Conteúdo Legal?</span></h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Nossa abordagem única faz a diferença na qualidade e no impacto do seu podcast
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+                    <div class="space-y-8">
+                        <!-- Diferencial 1 -->
+                        <div class="flex">
+                            <div class="gradient-bg w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+                                <i class="fas fa-sliders-h text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Equipamento de Primeira</h3>
+                                <p class="text-gray-300">
+                                    Microfones profissionais, interfaces de áudio de alta qualidade e tratamento acústico para captação impecável.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Diferencial 2 -->
+                        <div class="flex">
+                            <div class="gradient-bg w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+                                <i class="fas fa-users text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Equipe Experiente</h3>
+                                <p class="text-gray-300">
+                                    Produtores, editores e roteiristas com anos de experiência em criação de conteúdo para diversas mídias.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Diferencial 3 -->
+                        <div class="flex">
+                            <div class="gradient-bg w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+                                <i class="fas fa-chart-pie text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Resultados Mensuráveis</h3>
+                                <p class="text-gray-300">
+                                    Acompanhamento de métricas e ajustes estratégicos para garantir que seu podcast atinja seus objetivos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="fade-in">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Estúdio de gravação profissional" 
+                         class="rounded-2xl w-full h-auto object-cover">
+                    <div class="absolute -bottom-6 -right-6 bg-purple-600 text-white p-4 rounded-lg shadow-lg">
+                        <div class="text-4xl font-bold">100%</div>
+                        <div class="text-sm">Clientes Satisfeitos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section class="py-20 bg-gray-800 bg-opacity-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">O que dizem <span class="gradient-text">nossos clientes</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    A voz de quem já viveu a experiência de produzir conosco
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 fade-in">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Cliente" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Ana Carolina</h4>
+                            <p class="text-sm text-purple-400">@anacarolpodcast</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        "A Conteúdo Legal transformou meu projeto amador em um podcast profissional. A qualidade do áudio e a estrutura dos roteiros fizeram toda a diferença no engajamento."
+                    </p>
+                    <audio controls class="w-full mt-4">
+                        <source src="#" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+                
+                <!-- Depoimento 2 -->
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 fade-in">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Ricardo Almeida</h4>
+                            <p class="text-sm text-orange-400">@marketingnaweb</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        "Como empresário, não tinha tempo para produzir meu podcast. A equipe da Conteúdo Legal cuidou de tudo com excelência e hoje temos ótimos resultados com o conteúdo."
+                    </p>
+                    <audio controls class="w-full mt-4">
+                        <source src="#" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+                
+                <!-- Depoimento 3 -->
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 fade-in">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Juliana Santos</h4>
+                            <p class="text-sm text-blue-400">@julianatech</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        "A estratégia de distribuição e marketing que eles implementaram fez nosso podcast crescer 300% em ouvintes em apenas 3 meses. Recomendo demais!"
+                    </p>
+                    <audio controls class="w-full mt-4">
+                        <source src="#" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processo Section -->
+    <section id="processo" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Nosso <span class="gradient-text">Processo</span></h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Um fluxo de trabalho eficiente que garante qualidade e resultados
+            </p>
+        </div>
+        
+        <div class="relative">
+            <!-- Linha do tempo -->
+            <div class="hidden md:block absolute left-1/2 top-0 h-full w-1 gradient-bg -ml-0.5"></div>
+            
+            <div class="space-y-16 md:space-y-0">
+                <!-- Passo 1 -->
+                <div class="relative md:grid md:grid-cols-2 gap-8 items-center fade-in">
+                    <div class="md:text-right mb-8 md:mb-0">
+                        <div class="md:inline-block bg-gray-800 rounded-lg p-6 border border-gray-700 max-w-md">
+                            <div class="gradient-bg w-12 h-12 rounded-lg flex items-center justify-center mb-4 md:ml-auto">
+                                <span class="text-white font-bold text-xl">1</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Briefing Criativo</h3>
+                            <p class="text-gray-300">
+                                Entendemos seus objetivos, público-alvo e tom de voz para criar uma estratégia de conteúdo personalizada.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden md:block"></div>
+                    
+                    <div class="md:hidden absolute left-1/2 top-0 h-full w-1 gradient-bg -ml-0.5"></div>
+                    <div class="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 gradient-bg rounded-full w-8 h-8 flex items-center justify-center">
+                        <i class="fas fa-lightbulb text-white"></i>
+                    </div>
+                </div>
+                
+                <!-- Passo 2 -->
+                <div class="relative md:grid md:grid-cols-2 gap-8 items-center fade-in">
+                    <div class="hidden md:block"></div>
+                    
+                    <div class="mb-8 md:mb-0">
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 max-w-md">
+                            <div class="gradient-bg w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-white font-bold text-xl">2</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Produção Técnica</h3>
+                            <p class="text-gray-300">
+                                Gravação profissional no nosso estúdio ou remota, com edição, mixagem e tratamento de áudio de alta qualidade.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="md:hidden absolute left-1/2 top-0 h-full w-1 gradient-bg -ml-0.5"></div>
+                    <div class="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 gradient-bg rounded-full w-8 h-8 flex items-center justify-center">
+                        <i class="fas fa-microphone text-white"></i>
+                    </div>
+                </div>
+                
+                <!-- Passo 3 -->
+                <div class="relative md:grid md:grid-cols-2 gap-8 items-center fade-in">
+                    <div class="md:text-right mb-8 md:mb-0">
+                        <div class="md:inline-block bg-gray-800 rounded-lg p-6 border border-gray-700 max-w-md">
+                            <div class="gradient-bg w-12 h-12 rounded-lg flex items-center justify-center mb-4 md:ml-auto">
+                                <span class="text-white font-bold text-xl">3</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Publicação e Crescimento</h3>
+                            <p class="text-gray-300">
+                                Distribuição em todas as plataformas, estratégia de lançamento e acompanhamento de métricas para crescimento contínuo.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden md:block"></div>
+                    
+                    <div class="md:hidden absolute left-1/2 top-0 h-full w-1 gradient-bg -ml-0.5"></div>
+                    <div class="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 gradient-bg rounded-full w-8 h-8 flex items-center justify-center">
+                        <i class="fas fa-rocket text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Vamos conversar sobre <span class="gradient-text">seu podcast?</span></h2>
+                    <p class="text-xl text-gray-300 mb-8">
+                        Preencha o formulário ao lado ou entre em contato diretamente por nossos canais:
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="gradient-bg w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Telefone</p>
+                                <p class="font-medium">+55 81 98810-0164</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="gradient-bg w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">E-mail</p>
+                                <p class="font-medium">contato@conteudolegal.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="gradient-bg w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Estúdio</p>
+                                <p class="font-medium">Recife, PE - Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="bg-gray-700 hover:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="https://wa.me/5581988100164" target="_blank" class="bg-gray-700 hover:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <form class="bg-gray-900 rounded-xl p-8 border border-gray-700">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-300 mb-2">Nome completo</label>
+                            <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-300 mb-2">E-mail</label>
+                            <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="project" class="block text-gray-300 mb-2">Tipo de projeto</label>
+                            <select id="project" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <option value="">Selecione uma opção</option>
+                                <option value="branded">Podcast para marca/empresa</option>
+                                <option value="influencer">Podcast para influenciador</option>
+                                <option value="personal">Podcast pessoal/autoral</option>
+                                <option value="other">Outro tipo de projeto</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="reference" class="block text-gray-300 mb-2">Link de referência (opcional)</label>
+                            <input type="url" id="reference" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Podcast ou conteúdo que você admira">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 mb-2">Conte-nos sobre seu projeto</label>
+                            <textarea id="message" rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="gradient-bg text-white font-bold py-4 px-8 rounded-lg w-full hover:opacity-90 transition duration-300">
+                            Solicitar Orçamento
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Section -->
+    <section class="h-96">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.375389380114!2d-34.8812779240359!3d-8.06325398053205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1990a1a7e4a9%3A0x9c4a01b0a91dc092!2sRecife%2C%20PE!5e0!3m2!1spt-BR!2sbr!4v1689870421173!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                class="filter grayscale-50 opacity-90"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold gradient-text mb-4">Conteúdo Legal</h3>
+                    <p class="text-gray-400">
+                        Produção profissional de podcasts que transformam sua mensagem em conteúdo impactante.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Criação de Roteiro</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Gravação Profissional</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Edição Avançada</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Distribuição</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#servicos" class="text-gray-400 hover:text-white transition">Serviços</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfólio</a></li>
+                        <li><a href="#diferenciais" class="text-gray-400 hover:text-white transition">Diferenciais</a></li>
+                        <li><a href="#processo" class="text-gray-400 hover:text-white transition">Processo</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">contato@conteudolegal.com</li>
+                        <li class="text-gray-400">+55 81 98810-0164</li>
+                        <li class="text-gray-400">Recife, PE - Brasil</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2023 Conteúdo Legal. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-white transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-white transition">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                    <a href="https://wa.me/5581988100164" target="_blank" class="text-gray-500 hover:text-white transition">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        // Check on initial load
+        window.addEventListener('load', fadeInOnScroll);
+        
+        // Check on scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
