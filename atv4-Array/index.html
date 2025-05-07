@@ -38,7 +38,7 @@
         }
         
         .hero-gradient {
-            background: linear-gradient(135deg, #38b2ac 0%, #319795 50%, #2c7a7b 100%);
+            background: linear-gradient(135deg, #053980 0%, #053980 50%, #053980 100%);
         }
         
         .floating {
@@ -68,29 +68,52 @@
             top: 32px;
             height: calc(100% - 32px);
             width: 2px;
-            background: #38b2ac;
+            background: #ff7415;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5581987455207" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
-                        <i class="fas fa-heartbeat text-teal-600 text-3xl mr-2"></i>
-                        <span class="text-xl font-bold text-teal-800">Ação Saúde</span>
-                        <span class="ml-2 text-sm font-medium text-teal-600">Eu faço o bem</span>
+                        <i class="fas fa-heartbeat text-[#ff7415] text-3xl mr-2"></i>
+                        <span class="text-xl font-bold text-[#053980]">Ação Saúde</span>
+                        <span class="ml-2 text-sm font-medium text-[#ff7415]">Eu faço o bem</span>
                     </div>
                 </div>
                 <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
-                    <a href="#quem-somos" class="text-gray-700 hover:text-teal-600 px-3 py-2 font-medium">QUEM SOMOS</a>
-                    <a href="#atuacao" class="text-gray-700 hover:text-teal-600 px-3 py-2 font-medium">ÁREAS DE ATUAÇÃO</a>
-                    <a href="#doacao" class="bg-teal-600 text-white px-4 py-2 rounded-md font-medium hover:bg-teal-700 transition duration-300">DOAÇÃO</a>
+                    <a href="#quem-somos" class="text-gray-700 hover:text-[#ff7415] px-3 py-2 font-medium">QUEM SOMOS</a>
+                    <a href="#atuacao" class="text-gray-700 hover:text-[#ff7415] px-3 py-2 font-medium">ÁREAS DE ATUAÇÃO</a>
+                    <a href="#doacao" class="bg-[#ff7415] text-white px-4 py-2 rounded-md font-medium hover:bg-[#e5670d] transition duration-300">DOAÇÃO</a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-teal-600 focus:outline-none">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-[#ff7415] focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -100,9 +123,9 @@
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#quem-somos" class="block px-3 py-2 text-gray-700 hover:text-teal-600 font-medium">QUEM SOMOS</a>
-                <a href="#atuacao" class="block px-3 py-2 text-gray-700 hover:text-teal-600 font-medium">ÁREAS DE ATUAÇÃO</a>
-                <a href="#doacao" class="block px-3 py-2 bg-teal-600 text-white rounded-md font-medium hover:bg-teal-700">DOAÇÃO</a>
+                <a href="#quem-somos" class="block px-3 py-2 text-gray-700 hover:text-[#ff7415] font-medium">QUEM SOMOS</a>
+                <a href="#atuacao" class="block px-3 py-2 text-gray-700 hover:text-[#ff7415] font-medium">ÁREAS DE ATUAÇÃO</a>
+                <a href="#doacao" class="block px-3 py-2 bg-[#ff7415] text-white rounded-md font-medium hover:bg-[#e5670d]">DOAÇÃO</a>
             </div>
         </div>
     </nav>
@@ -112,10 +135,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
             <div class="md:flex items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Ação Saúde<br><span class="text-teal-200">Eu faço o bem</span></h1>
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Ação Saúde<br><span class="text-[#ffd1a8]">Eu faço o bem</span></h1>
                     <p class="text-xl mb-8">Levar acesso à saúde integralmente à quem precisa é nossa missão.</p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#doacao" class="bg-white text-teal-700 px-6 py-3 rounded-md font-bold text-center hover:bg-gray-100 transition duration-300 pulse">
+                        <a href="#doacao" class="bg-white text-[#053980] px-6 py-3 rounded-md font-bold text-center hover:bg-gray-100 transition duration-300 pulse">
                             <i class="fas fa-hand-holding-heart mr-2"></i> Faça uma doação
                         </a>
                         <a href="#atuacao" class="border-2 border-white text-white px-6 py-3 rounded-md font-bold text-center hover:bg-white hover:bg-opacity-20 transition duration-300">
@@ -124,6 +147,7 @@
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center">
+                    <!-- IMAGE REFERENCE 1 - Replace this src with your actual image -->
                     <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
                          alt="Equipe médica atendendo comunidade" 
                          class="rounded-lg shadow-2xl floating max-w-md w-full">
@@ -137,11 +161,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">O que é o Ação Saúde?</h2>
-                <div class="w-20 h-1 bg-teal-600 mx-auto"></div>
+                <div class="w-20 h-1 bg-[#ff7415] mx-auto"></div>
             </div>
             
             <div class="md:flex items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <!-- IMAGE REFERENCE 2 - Replace this src with your actual image -->
                     <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
                          alt="Médico atendendo paciente" 
                          class="rounded-lg shadow-lg w-full">
@@ -149,11 +174,11 @@
                 <div class="md:w-1/2">
                     <h3 class="text-2xl font-bold text-gray-800 mb-6">O que é o Instituto Ação Saúde Internacional?</h3>
                     <p class="text-gray-700 mb-6 text-lg">
-                        O <span class="font-bold text-teal-700">Instituto Ação Saúde</span> é um órgão não governamental, com o propósito de levar acesso à saúde integralmente à quem precisa.
+                        O <span class="font-bold text-[#053980]">Instituto Ação Saúde</span> é um órgão não governamental, com o propósito de levar acesso à saúde integralmente à quem precisa.
                     </p>
                     
-                    <div class="bg-teal-50 border-l-4 border-teal-600 p-4 rounded mb-6">
-                        <p class="text-teal-800 font-medium italic">
+                    <div class="bg-[#ff7415] bg-opacity-10 border-l-4 border-[#ff7415] p-4 rounded mb-6">
+                        <p class="text-[#053980] font-medium italic">
                             "Eu faço o bem" - Nosso lema que inspira cada ação e cada voluntário em nossa organização.
                         </p>
                     </div>
@@ -167,7 +192,7 @@
                 <div class="relative">
                     <!-- Timeline Item 1 -->
                     <div class="timeline-item relative pl-16 pb-10">
-                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-teal-600 text-white">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-[#ff7415] text-white">
                             <i class="fas fa-lightbulb text-xl"></i>
                         </div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">2007 - O Início</h4>
@@ -178,7 +203,7 @@
                     
                     <!-- Timeline Item 2 -->
                     <div class="timeline-item relative pl-16 pb-10">
-                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-teal-600 text-white">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-[#ff7415] text-white">
                             <i class="fas fa-heartbeat text-xl"></i>
                         </div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">O Programa Ação Saúde</h4>
@@ -189,7 +214,7 @@
                     
                     <!-- Timeline Item 3 -->
                     <div class="timeline-item relative pl-16 pb-10">
-                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-teal-600 text-white">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-[#ff7415] text-white">
                             <i class="fas fa-expand text-xl"></i>
                         </div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">Expansão</h4>
@@ -200,7 +225,7 @@
                     
                     <!-- Timeline Item 4 -->
                     <div class="timeline-item relative pl-16">
-                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-teal-600 text-white">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-[#ff7415] text-white">
                             <i class="fas fa-globe text-xl"></i>
                         </div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">Hoje</h4>
@@ -218,11 +243,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">Áreas de Atuação</h2>
-                <div class="w-20 h-1 bg-teal-600 mx-auto"></div>
+                <div class="w-20 h-1 bg-[#ff7415] mx-auto"></div>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-teal-600 text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                <div class="bg-[#053980] text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
                     <div class="text-4xl mb-4">
                         <i class="fas fa-child"></i>
                     </div>
@@ -232,7 +257,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-teal-700 text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                <div class="bg-[#053980] text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
                     <div class="text-4xl mb-4">
                         <i class="fas fa-wheelchair"></i>
                     </div>
@@ -242,7 +267,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-teal-800 text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                <div class="bg-[#053980] text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
                     <div class="text-4xl mb-4">
                         <i class="fas fa-leaf"></i>
                     </div>
@@ -252,7 +277,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-teal-900 text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                <div class="bg-[#053980] text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
                     <div class="text-4xl mb-4">
                         <i class="fas fa-briefcase"></i>
                     </div>
@@ -262,7 +287,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-teal-600 text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                <div class="bg-[#053980] text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
                     <div class="text-4xl mb-4">
                         <i class="fas fa-balance-scale"></i>
                     </div>
@@ -272,7 +297,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-teal-700 text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                <div class="bg-[#053980] text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
                     <div class="text-4xl mb-4">
                         <i class="fas fa-lightbulb"></i>
                     </div>
@@ -282,7 +307,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-teal-800 text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                <div class="bg-[#053980] text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
                     <div class="text-4xl mb-4">
                         <i class="fas fa-hands-praying"></i>
                     </div>
@@ -292,7 +317,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-teal-900 text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                <div class="bg-[#053980] text-white p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
                     <div class="text-4xl mb-4">
                         <i class="fas fa-hands-holding-child"></i>
                     </div>
@@ -306,7 +331,7 @@
     </section>
 
     <!-- Doação Section -->
-    <section id="doacao" class="py-20 bg-teal-800 text-white">
+    <section id="doacao" class="py-20 bg-[#053980] text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold mb-4">Faça uma Doação</h2>
@@ -316,39 +341,39 @@
             <div class="md:flex items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                     <h3 class="text-2xl font-bold mb-6">Sua contribuição transforma vidas!</h3>
-                    <p class="mb-6 text-teal-100">
+                    <p class="mb-6 text-blue-100">
                         Cada doação nos ajuda a levar saúde integral para mais pessoas. Com R$50,00 podemos fornecer um kit de higiene básica para uma família. Com R$100,00, custeamos uma consulta médica. Com R$500,00, realizamos uma oficina de capacitação para 20 pessoas.
                     </p>
-                    <div class="bg-teal-700 p-4 rounded-lg mb-6">
+                    <div class="bg-[#0a4da8] p-4 rounded-lg mb-6">
                         <h4 class="font-bold mb-2">Dados Bancários</h4>
                         <p class="mb-1"><span class="font-semibold">Banco:</span> Sicredi (748)</p>
                         <p class="mb-1"><span class="font-semibold">Agência:</span> 2203</p>
                         <p class="mb-1"><span class="font-semibold">Conta:</span> 42.524-9</p>
                         <p class="mb-1"><span class="font-semibold">CNPJ:</span> 37.296.007/0001-02</p>
                         <p class="mb-1"><span class="font-semibold">PIX:</span> 81987455207</p>
-                        <p class="mt-3 text-sm text-teal-200">
+                        <p class="mt-3 text-sm text-blue-200">
                             Instituto Ação Saúde Internacional
                         </p>
                     </div>
-                    <p class="text-teal-100">
+                    <p class="text-blue-100">
                         Todas as doações são fiscalizadas e aplicadas integralmente em nossos projetos. Emitimos recibo para dedução no Imposto de Renda.
                     </p>
                 </div>
                 <div class="md:w-1/2">
                     <div class="bg-white rounded-lg shadow-xl p-8 text-gray-800">
-                        <h3 class="text-2xl font-bold mb-6 text-teal-800">Formas de Apoio</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-[#053980]">Formas de Apoio</h3>
                         
                         <div class="mb-6">
-                            <h4 class="font-bold text-lg mb-3 text-teal-700">Doação Financeira</h4>
+                            <h4 class="font-bold text-lg mb-3 text-[#053980]">Doação Financeira</h4>
                             <p class="mb-4">Transferência bancária, PIX ou depósito direto em nossa conta.</p>
-                            <button onclick="copyPix()" class="bg-teal-600 text-white px-4 py-2 rounded-md font-medium hover:bg-teal-700 transition duration-300">
+                            <button onclick="copyPix()" class="bg-[#ff7415] text-white px-4 py-2 rounded-md font-medium hover:bg-[#e5670d] transition duration-300">
                                 <i class="fas fa-copy mr-2"></i> Copiar Chave PIX
                             </button>
                             <p id="pix-copied" class="text-green-600 text-sm mt-2 hidden">Chave PIX copiada!</p>
                         </div>
                         
                         <div class="mb-6">
-                            <h4 class="font-bold text-lg mb-3 text-teal-700">Doação de Materiais</h4>
+                            <h4 class="font-bold text-lg mb-3 text-[#053980]">Doação de Materiais</h4>
                             <p class="mb-2">Aceitamos doações de:</p>
                             <ul class="list-disc pl-5">
                                 <li>Materiais de higiene</li>
@@ -359,10 +384,10 @@
                         </div>
                         
                         <div>
-                            <h4 class="font-bold text-lg mb-3 text-teal-700">Trabalho Voluntário</h4>
+                            <h4 class="font-bold text-lg mb-3 text-[#053980]">Trabalho Voluntário</h4>
                             <p>Profissionais de saúde, educadores e outros especialistas podem se voluntariar.</p>
-                            <a href="#contato" class="inline-block mt-4 bg-teal-600 text-white px-4 py-2 rounded-md font-medium hover:bg-teal-700 transition duration-300">
-                                <i class="fas fa-envelope mr-2"></i> Contatar sobre voluntariado
+                            <a href="https://wa.me/5581987455207" class="inline-block mt-4 bg-[#25d366] text-white px-4 py-2 rounded-md font-medium hover:bg-[#1da851] transition duration-300">
+                                <i class="fab fa-whatsapp mr-2"></i> Fale conosco no WhatsApp
                             </a>
                         </div>
                     </div>
@@ -376,19 +401,19 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">Entre em Contato</h2>
-                <div class="w-20 h-1 bg-teal-600 mx-auto"></div>
+                <div class="w-20 h-1 bg-[#ff7415] mx-auto"></div>
             </div>
             
             <div class="md:flex">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 mx-auto">
                     <h3 class="text-2xl font-bold text-gray-800 mb-6">Fale Conosco</h3>
                     <p class="text-gray-600 mb-8">
-                        Tem dúvidas, quer ser um voluntário ou discutir uma possível parceria? Preencha o formulário ou entre em contato diretamente pelos nossos canais.
+                        Tem dúvidas, quer ser um voluntário ou discutir uma possível parceria? Entre em contato diretamente pelos nossos canais.
                     </p>
                     
                     <div class="space-y-4">
                         <div class="flex items-start">
-                            <div class="text-teal-600 text-xl mr-4 mt-1">
+                            <div class="text-[#ff7415] text-xl mr-4 mt-1">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
@@ -398,7 +423,7 @@
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="text-teal-600 text-xl mr-4 mt-1">
+                            <div class="text-[#ff7415] text-xl mr-4 mt-1">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
@@ -408,7 +433,7 @@
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="text-teal-600 text-xl mr-4 mt-1">
+                            <div class="text-[#ff7415] text-xl mr-4 mt-1">
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div>
@@ -421,59 +446,26 @@
                     <div class="mt-8">
                         <h4 class="font-bold text-gray-800 mb-4">Siga-nos</h4>
                         <div class="flex space-x-4">
-                            <a href="#" class="text-teal-600 hover:text-teal-800 text-2xl">
+                            <a href="#" class="text-[#ff7415] hover:text-[#e5670d] text-2xl">
                                 <i class="fab fa-facebook"></i>
                             </a>
-                            <a href="#" class="text-teal-600 hover:text-teal-800 text-2xl">
+                            <a href="#" class="text-[#ff7415] hover:text-[#e5670d] text-2xl">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="#" class="text-teal-600 hover:text-teal-800 text-2xl">
+                            <a href="#" class="text-[#ff7415] hover:text-[#e5670d] text-2xl">
                                 <i class="fab fa-linkedin"></i>
                             </a>
-                            <a href="#" class="text-teal-600 hover:text-teal-800 text-2xl">
+                            <a href="#" class="text-[#ff7415] hover:text-[#e5670d] text-2xl">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
                     </div>
-                </div>
-                
-                <div class="md:w-1/2">
-                    <form class="bg-gray-50 p-8 rounded-lg shadow-md">
-                        <div class="mb-6">
-                            <label for="nome" class="block text-gray-700 font-medium mb-2">Nome Completo</label>
-                            <input type="text" id="nome" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="telefone" class="block text-gray-700 font-medium mb-2">Telefone</label>
-                            <input type="tel" id="telefone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="assunto" class="block text-gray-700 font-medium mb-2">Assunto</label>
-                            <select id="assunto" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600">
-                                <option value="">Selecione...</option>
-                                <option value="doacao">Doação</option>
-                                <option value="parceria">Parceria</option>
-                                <option value="voluntariado">Voluntariado</option>
-                                <option value="outro">Outro</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="mensagem" class="block text-gray-700 font-medium mb-2">Mensagem</label>
-                            <textarea id="mensagem" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-teal-600 text-white px-6 py-3 rounded-md font-bold hover:bg-teal-700 transition duration-300">
-                            Enviar Mensagem
-                        </button>
-                    </form>
+                    
+                    <div class="mt-8">
+                        <a href="https://wa.me/5581987455207" class="inline-block bg-[#25d366] text-white px-6 py-3 rounded-md font-bold hover:bg-[#1da851] transition duration-300">
+                            <i class="fab fa-whatsapp mr-2"></i> Fale conosco no WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -485,9 +477,9 @@
             <div class="md:flex md:justify-between">
                 <div class="mb-8 md:mb-0">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-heartbeat text-teal-500 text-2xl mr-2"></i>
+                        <i class="fas fa-heartbeat text-[#ff7415] text-2xl mr-2"></i>
                         <span class="text-xl font-bold">Ação Saúde</span>
-                        <span class="ml-2 text-sm text-teal-400">Eu faço o bem</span>
+                        <span class="ml-2 text-sm text-[#ff7415]">Eu faço o bem</span>
                     </div>
                     <p class="text-gray-400 max-w-xs">
                         Levar acesso à saúde integralmente à quem precisa é nossa missão.
@@ -496,7 +488,7 @@
                 
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
                     <div>
-                        <h3 class="text-teal-500 font-bold mb-4">Links</h3>
+                        <h3 class="text-[#ff7415] font-bold mb-4">Links</h3>
                         <ul class="space-y-2">
                             <li><a href="#quem-somos" class="text-gray-400 hover:text-white transition duration-300">Quem Somos</a></li>
                             <li><a href="#atuacao" class="text-gray-400 hover:text-white transition duration-300">Áreas de Atuação</a></li>
@@ -505,25 +497,25 @@
                     </div>
                     
                     <div>
-                        <h3 class="text-teal-500 font-bold mb-4">Contato</h3>
+                        <h3 class="text-[#ff7415] font-bold mb-4">Contato</h3>
                         <ul class="space-y-2 text-gray-400">
                             <li class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-teal-500 mr-2 mt-1"></i>
+                                <i class="fas fa-map-marker-alt text-[#ff7415] mr-2 mt-1"></i>
                                 <span>Recife, PE - Brasil</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-envelope text-teal-500 mr-2 mt-1"></i>
+                                <i class="fas fa-envelope text-[#ff7415] mr-2 mt-1"></i>
                                 <span>contato@acaosaude.org</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-phone text-teal-500 mr-2 mt-1"></i>
+                                <i class="fas fa-phone text-[#ff7415] mr-2 mt-1"></i>
                                 <span>(81) 98745-5207</span>
                             </li>
                         </ul>
                     </div>
                     
                     <div>
-                        <h3 class="text-teal-500 font-bold mb-4">Legal</h3>
+                        <h3 class="text-[#ff7415] font-bold mb-4">Legal</h3>
                         <ul class="space-y-2">
                             <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Termos de Uso</a></li>
                             <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Política de Privacidade</a></li>
